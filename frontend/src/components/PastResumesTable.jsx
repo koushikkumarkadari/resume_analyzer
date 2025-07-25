@@ -12,7 +12,7 @@ const PastResumesTable = ({ authHeader }) => {
     setIsLoading(true);
     setError(null);
 
-    axios.get(`${import.meta.env.VITE_API_URL}/resumes`, authHeader)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/resumes`, authHeader)
       .then((res) => {
         setResumes(res.data);
         setIsLoading(false);

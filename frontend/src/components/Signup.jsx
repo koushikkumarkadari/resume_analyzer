@@ -10,7 +10,7 @@ const Signup = ({ onSignup }) => {
     e.preventDefault();
     setError(null);
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/resumes/register`, { email, password });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/resumes/register`, { email, password });
       onSignup();
     } catch (err) {
       setError(err.response?.data?.message || 'Signup failed');

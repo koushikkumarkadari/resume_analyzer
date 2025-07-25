@@ -11,7 +11,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     setError(null);
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/resumes/login`, { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/resumes/login`, { email, password });
       localStorage.setItem('token', response.data.token);
       onLogin();
     } catch (err) {

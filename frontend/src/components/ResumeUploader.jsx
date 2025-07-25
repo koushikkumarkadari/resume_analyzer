@@ -14,7 +14,7 @@ const ResumeUploader = ({ onUploadSuccess, authHeader }) => {
     formData.append('resume', file);
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/resumes/upload`, formData, authHeader);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/resumes/upload`, formData, authHeader);
       onUploadSuccess(response.data);
     } catch (err) {
       setError(err.response?.data?.message || 'Upload failed');
